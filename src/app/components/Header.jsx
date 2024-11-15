@@ -35,7 +35,7 @@ const Header = () => {
                         <button>About</button>
                     </Link>
                     <Link href="/projects" className={`${path === '/projects' ? "text-green-600 font-bold" : "text-black" }`}>
-                        <button>Projects</button>
+                        <button>Projects </button>
                     </Link>
                 </div>
                 <div className='flex items-center gap-4'>
