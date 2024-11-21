@@ -1,7 +1,7 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { clerkClient, WebhookEvent } from '@clerk/nextjs/server'
-import { createOrUpdateUser } from '@/lib/actions/user'
+import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
 
 export async function POST(req) {
   const SIGNING_SECRET = process.env.SIGNING_SECRET
@@ -90,6 +90,16 @@ export async function POST(req) {
       console.log('Error creating or updating user: ',error);
       return new Response('Error occured',{status : 400 })
     }
+  }
+  
+  if (eventType === 'user.deleted') {
+    const { id } = evt?.data;
+  }
+  try {
+    await deleteUser(id);
+  } catch (error) {
+    console.log('Error deleting user: ',error);
+    return new Response('Error occured', { status :400})
   }
 
 
