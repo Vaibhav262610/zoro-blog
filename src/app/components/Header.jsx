@@ -29,13 +29,13 @@ const Header = () => {
                 </div>
                 <div className='flex text-md gap-9'>
                     <Link href="/" className={`${path === '/' ? "text-green-600 font-bold" : "text-black" }`}>
-                        <button>Home</button>
+                        <button>Home </button>
                     </Link>
                     <Link href="/about" className={`${path === '/about' ? "text-green-600 font-bold" : "text-black" }`}>
-                        <button>About</button>
+                        <button>About </button>
                     </Link>
                     <Link href="/projects" className={`${path === '/projects' ? "text-green-600 font-bold" : "text-black" }`}>
-                        <button>Projects</button>
+                        <button>Projects </button>
                     </Link>
                 </div>
                 <div className='flex items-center gap-4'>
